@@ -1,0 +1,3 @@
+[1120/055459.547:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\temp\settings.dat: Ingen tilgang. (0x5)
+[1120/055459.560:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Datakanalen er avsluttet. (0x6D)
+[1120/055459.561:ERROR:file_io_win.cc(179)] CreateFile C:\Program Files (x86)\temp\settings.dat: Ingen tilgang. (0x5)

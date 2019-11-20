@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700&display=swap');
+
+.characterSelect {
+    background: #111;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 70px;
+}
+
+.container-fluid {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+.card {
+    height: 280px;
+    background: #1a1a1a;
+    background-image: url(../img/border.jpg);
+    size: cover;
+    display: block;
+    padding: 2%;
+    margin: 1% 0 1% 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    margin: 20px 0;
+}
+
+.card-inner {
+    background: #1a1a1a;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.char-name {
+    font-size: 20px;
+    color: #fff;
+    font-family: Cinzel Decorative;
+    font-weight: 600;
+    padding-top: 25px;
+    margin-bottom: 0;
+}
+
+.char-title {
+    font-size: 14px;
+    color: #fff;
+    font-family: Cinzel Decorative;
+    padding-top: 10px;
+}
+
+.title {
+    font-size: 26px;
+    text-align: center;
+    font-family: Cinzel Decorative;
+    font-weight: 600;
+    color: #fff;
+}
+
+.title.title__desc {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.selectBtn {
+    border: 1px solid #fff;
+    border-radius: 3px;
+    background: transparent;
+    color: #fff;
+    font-family: Cinzel Decorative;
+    font-weight: 600;
+    padding: 5px 15px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.selectBtn:hover {
+    background: #fff;
+    color: #1a1a1a;
+}
+
+.birth {
+    color: #fff;
+    font-size: 12px;
+}

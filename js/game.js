@@ -101,7 +101,9 @@ frame.on("ready", ()=>{
     var x = 4;
     var y = 7;
     
+    board.add(player2, x, y);
     board.add(player, x, y); // can only add() to the board (otherwise use board.info)
+  
 
     
     
@@ -109,11 +111,18 @@ frame.on("ready", ()=>{
     
     var totalPlayerOne = 0;
     
-    function movePlayer() {
+    function movePlayerOne() {
         var roll = Math.floor( Math.random() * 6 ) +1;
         totalPlayerOne = totalPlayerOne + roll;
         console.log(totalPlayerOne);
         console.log("Roll: " + roll)
+
+        if(totalPlayerOne === 15) {
+            alert("THIS IS A TRAP");
+            totalPlayerOne = 12;
+            board.add(player, 4, 3);
+        }
+
         if(totalPlayerOne < 4) {
             board.add(player, (x + totalPlayerOne), y);
         } else if (totalPlayerOne < 9) {
@@ -137,9 +146,51 @@ frame.on("ready", ()=>{
         }
         
     }
+
+    var totalPlayerTwo = 0;
+    
+
+    function movePlayerTwo() {
+        var roll = Math.floor( Math.random() * 6 ) +1;
+        totalPlayerTwo = totalPlayerTwo + roll;
+        console.log(totalPlayerTwo);
+        console.log("Roll: " + roll)
+
+        if(totalPlayerTwo === 15) {
+            alert("THIS IS A TRAP");
+            totalPlayerTwo = 12;
+            board.add(player2, 4, 3);
+        }
+
+        if(totalPlayerTwo < 4) {
+            board.add(player2, (x + totalPlayerTwo), y);
+        } else if (totalPlayerTwo < 9) {
+            board.add(player2, 7, (7 - (totalPlayerTwo - 3)));
+        } else if (totalPlayerTwo < 12) {
+            board.add(player2, (7 - (totalPlayerTwo - 8)), 2);
+        } else if (totalPlayerTwo < 14) {
+            board.add(player2, 4, (2 + (totalPlayerTwo - 11)));
+        } else if (totalPlayerTwo < 16) {
+            board.add(player2, (4 - (totalPlayerTwo - 13)), 4);
+        } else if (totalPlayerTwo < 18) {
+            board.add(player2, 2, (4 + (totalPlayerTwo - 15)));
+        } else if (totalPlayerTwo < 20) {
+            board.add(player2, (2 - (totalPlayerTwo - 17)), 6);
+        } else if (totalPlayerTwo < 26) {
+            board.add(player2, 0, (6 - (totalPlayerTwo - 19)));
+        } else if (totalPlayerTwo < 31) {
+            board.add(player2, ((totalPlayerTwo - 25)), 0);
+        } else if (totalPlayerTwo >= 30) {
+            window.location.href = "congrats.html";
+        }
+        
+    }
     
     var player1Roll = document.getElementById("rollOne");
-    player1Roll.addEventListener("click", movePlayer);
+    player1Roll.addEventListener("click", movePlayerOne);
+
+    var player2Roll = document.getElementById("rollTwo");
+    player2Roll.addEventListener("click", movePlayerTwo);
 
 
     // Create an Orb that is the final maze destiation

@@ -113,7 +113,7 @@ frame.on("ready", ()=>{
     
     function movePlayerOne() {
 
-        var roll = Math.floor( Math.random() * 1 ) +1;
+        var roll = Math.floor( Math.random() * 6 ) +1;
 
         if(roll !== 6) {
             player1Roll.style.display = "none";
@@ -162,7 +162,7 @@ frame.on("ready", ()=>{
     
 
     function movePlayerTwo() {
-        var roll = Math.floor( Math.random() * 1 ) +1;
+        var roll = Math.floor( Math.random() * 6 ) +1;
 
         if(roll !== 6) {
             player2Roll.style.display = "none";

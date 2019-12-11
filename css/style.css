@@ -1,101 +1,263 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700&display=swap');
 
-.characterSelect {
-    background: #111;
-    background-size: cover;
+/* MAIN PAGE */
+
+.mainStart {
+    background: #000;
+    min-height: 100%;
     min-height: 100vh;
-    position: relative;
-    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    background: url('../img/mainBack.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
-.card {
-    height: 280px;
-    background: #1a1a1a;
-    background-image: url(../img/border.jpg);
-    size: cover;
-    display: block;
-    padding: 2%;
-    margin: 1% 0 1% 0;
-    width: 100%;
-    margin: 20px 0;
-}
-
-.card-inner {
-    background: #1a1a1a;
+.mainStart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    text-align: center;
+    background: #000;
+    opacity: 0.85;
+    z-index: 1;
 }
 
-.char-name {
-    font-size: 20px;
-    color: #fff;
-    font-family: Cinzel Decorative;
-    font-weight: 600;
-    padding-top: 25px;
-    margin-bottom: 0;
-}
-
-.char-title {
-    font-size: 14px;
-    color: #fff;
-    font-family: Cinzel Decorative;
-    padding-top: 10px;
-}
-
-.title {
-    font-size: 26px;
-    text-align: center;
-    font-family: Cinzel Decorative;
-    font-weight: 600;
-    color: #fff;
-}
-
-.title.title__desc {
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.selectBtn {
-    border: 1px solid #fff;
-    border-radius: 3px;
-    background: transparent;
-    color: #fff;
-    font-family: Cinzel Decorative;
-    font-weight: 600;
-    padding: 5px 15px;
+.bottom__row {
     position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 50px;
+    width: 1200px;
 }
 
-.startBtn {
-    border: 1px solid #fff;
-    border-radius: 3px;
-    background: transparent;
-    color: #fff;
-    font-family: Cinzel Decorative;
-    font-weight: 600;
-    padding: 5px 15px;
+.mainStart > * {
+    z-index: 100;
 }
 
 .center {
     text-align: center;
-    padding: 40px 0;
 }
 
-.selectBtn:hover {
-    background: #fff;
-    color: #1a1a1a;
+.right {
+    text-align: right;
+    right: 0;
 }
 
-.birth {
+.bottom {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+
+.player {
     color: #fff;
-    font-size: 12px;
+}
+
+.player i {
+    font-size: 24px;
+}
+
+#volumeOff {
+    display: none;
+}
+
+.main__title,
+.main__title--large {
+    font-family: Cinzel Decorative;
+    font-size: 22px;
+    color: #fff;
+}
+
+.main__title--large {
+    font-size: 74px;
+}
+
+.main__btn {
+    margin-top: 100px;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    font-size: 16px;
+    background: transparent;
+    font-family: Cinzel Decorative;
+}
+
+.main__btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+.main__rules {
+    color: #fff;
+    font-family: Cinzel Decorative;
+    font-size: 16px;
+}
+
+.main__rules--link:hover {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-header {
+    font-family: Cinzel Decorative;
+}
+
+.modal-header .close {
+    color: #fff;
+}
+
+.modal-body,
+.modal-header,
+.modal-footer {
+    color: #fff;
+    background: #000;
+}
+
+.modal-body {
+    padding: 30px 0;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #1a1a1a;
 }
 
 
+.modal-footer {
+    justify-content: center !important; /* Override Bootstrap */
+}
+
+.modal-footer button,
+#start__btn {
+    background: transparent;
+    color: #fff;
+    font-family: Cinzel Decorative;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: 1px solid #fff;
+}
+
+.modal-footer button:hover,
+#start__btn:hover {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+
+.rule__title {
+    text-align: center;
+    font-family: Cinzel Decorative;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.rule__list {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+.rule__list li {
+    line-height: 3;
+    font-family: Cinzel Decorative;
+}
+
+/* CHAR SELECT */
+
+.flex-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.charCard {
+    background: #000;
+    flex: 1 0 17.2%;
+    width: 100%;
+    border: 2px solid #4D4D4D;
+    border-radius: 10px;
+    height: 125px;
+    margin: 20px 20px 20px 0;
+    color: #fff;
+    font-family: Cinzel Decorative;
+    padding: 30px 0;
+}
+
+.charCard.selected {
+    border: 2px solid #fff;
+}
+
+.instruct__label {
+    display: none;
+    position: relative;
+    width: 60px;
+    top: 0;
+    background: #000;
+    border: 2px solid #fff;
+}
+
+.charCard:hover {
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.instruct__char,
+.instruct__player {
+    color: #fff;
+    font-family: Cinzel Decorative;
+    font-size: 22px;
+}
+
+.instruct__player {
+    font-size: 18px;
+    color: #707070;
+}
+
+.instruct__player.active {
+    color: #fff;
+}
+
+.char__house,
+.char__name,
+.char__title {
+    color: #A0A0A0;
+    font-family: Cinzel Decorative;
+}
+
+.char__house {
+    font-size: 14px;
+}
+
+.char__name {
+    font-size: 38px;
+}
+
+.char__title {
+    font-size: 16px;
+    font-family: Open Sans;
+    padding: 30px 0;
+}
+
+.char__select {
+    width: 220px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 10px 0;
+    font-family: Cinzel Decorative;
+}
+
+.char__select:hover {
+    color: #000;
+    background: #fff;
+    cursor: pointer;
+}
 /* GAME */
 
 .playerOneArea,

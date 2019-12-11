@@ -1,6 +1,86 @@
-// Create a request varialbe
+// Character Selection UI Changes - And set storage
+var playerTurn = 0;
+var card = document.getElementsByClassName("charCard");
+var instruct__one = document.getElementById("instruct__one");
+var instruct__two = document.getElementById("instruct__two");
+var selected;
+
+function chosenChar(x) {
+
+    selected = x;
+    document.getElementById("char__name").innerHTML = card[x].dataset.name;
+    document.getElementById("char__house").innerHTML = card[x].dataset.house;
+    document.getElementById("char__title").innerHTML = card[x].dataset.title;
+    console.log(x);
+    
+
+    
+    if(playerTurn === 0) {
+
+        for (var i = 0; i < card.length; i++) {
+            card[i].classList.remove("selected");
+        }   
+
+        card[x].classList.add("selected");
+
+    } else if (playerTurn === 1) {
+
+        for (var i = 0; i < card.length; i++) {
+            card[i].classList.remove("selected");
+        }   
+
+        card[x].classList.add("selected");
+
+    } else if (playerTurn > 1) {
+        for (var i = 0; i < card.length; i++) {
+            card[i].classList.remove("selected");
+        }   
+    }
+}
+
+
+function charOne() {
+    if(playerTurn === 0) {
+        document.getElementById("select__char").addEventListener("click", event => {
+            window.sessionStorage.setItem("PlayerOne", card[selected].dataset.name);
+            console.log("Player One has selected: " + card[selected].dataset.name);
+            card[selected].removeAttribute("onclick");
+            instruct__one.classList.remove("active");
+            instruct__two.classList.add("active");
+            playerTurn++;
+        });
+    } else {
+
+    }
+    
+    if (playerTurn === 1) {
+        document.getElementById("select__char").addEventListener("click", event => {
+            window.sessionStorage.setItem("PlayerTwo", card[selected].dataset.name);
+            console.log("Player Two has selected: " + card[selected].dataset.name);
+            card[selected].removeAttribute("onclick");
+            instruct__one.classList.remove("active");
+            instruct__two.classList.add("active");
+            instruct__two.classList.remove("active");
+            playerTurn++;
+
+            document.getElementById("start__btn").removeAttribute("disabled");
+            document.getElementById("start__btn").removeAttribute("style");
+
+            document.getElementById("start__btn").addEventListener("click", event => {
+                window.location = "game.html";
+            });
+        });
+    } else {
+
+    }
+}
+
+
+
+
+// DATA FROM API
 var request = new XMLHttpRequest();
-var cards = document.querySelectorAll(".card-inner");
+var cards = document.querySelectorAll(".charCard");
 var playerOne = "";
 var playerTwo = "";
 
@@ -22,61 +102,14 @@ request.onload = function() {
                 q++;
             } else {
                 // Data we need: name, gender, titles(loop), aliases(loop), check allegiances, can check mother/father,
-                var name = document.createElement("h2");
-                name.innerHTML = data[i].name;
-                name.classList.add("char-name");
-
-                var title = document.createElement("h3");
-                title.innerHTML = data[i].titles[0];
-                title.classList.add("char-title");
-
-                // Button for character select
-                var selectBtn = document.createElement("button");
-                selectBtn.innerHTML = "Select Character";
-                selectBtn.classList.add("selectBtn");
-                selectBtn.value = data[i].name;
-                var p = 1;
-                var pHolder = document.getElementById("playerNum");
-                var instructions = document.getElementById("playerInstruction");
-                selectBtn.onclick = function() {
-                    
-                    if(p === 1) {
-                        this.innerHTML = "Player " + p;
-                        console.log("Player " + p + " has selected: " + this.value);
-                        playerOne = this.value;
-                        console.log(playerOne);
-                        p++;
-                        pHolder.innerHTML = p;
-                    } else if(p === 2) {
-                        this.innerHTML = "Player " + p;
-                        console.log("Player " + p + " has selected: " + this.value);
-                        playerTwo = this.value;
-                        console.log(playerTwo);
-                        p++;
-                        instructions.innerHTML = "You Can Now Start The Game";
-                    } else if (p > 2) {
-
-                    }  
-                }
-
-                var birth = document.createElement("span");
-                birth.classList.add("birth");
-                // Check birth
-                if(data[i].born != "") {
-                    
-                    birth.innerHTML = "Born: " + data[i].born;
-                    
-                } else {
-                    birth.innerHTML = "Born: Unkown";
-                }
+                var name = document.createTextNode(data[i].name);
 
                 // Appends
                 cards[s].appendChild(name);
-                cards[s].appendChild(title);
-                cards[s].appendChild(birth);
-                
-                cards[s].appendChild(selectBtn);
+    
                 cards[s].setAttribute("data-name", data[i].name);
+                cards[s].setAttribute("data-house", "HOUSE COMING HERE");
+                cards[s].setAttribute("data-title", data[i].aliases[0]);
                 s++;
                 
             }

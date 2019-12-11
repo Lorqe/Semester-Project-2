@@ -25,98 +25,59 @@
     <body>
         <header></header>
 
-        <main class="characterSelect">
+        <main>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h1 class="title">SELECT YOUR CHARACTERS</h1>
-                        <h4 class="title title__desc" id="playerInstruction">Player <span id="playerNum">1</span> - Select Your Character</h4>
+            <div class="mainStart">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="instruct__char">Choose Character</h4>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="flex-row">
+                                    <div onclick="chosenChar(0)" class="charCard"></div>
+                                    <div onclick="chosenChar(1)" class="charCard"></div>
+                                    <div onclick="chosenChar(2)" class="charCard"></div>
+                                    <div onclick="chosenChar(3)" class="charCard"></div>
+                                    <div onclick="chosenChar(4)" class="charCard"></div>
+                                    <div onclick="chosenChar(5)" class="charCard"></div>
+                                    <div onclick="chosenChar(6)" class="charCard"></div>
+                                    <div onclick="chosenChar(7)" class="charCard"></div>
+                                    <div onclick="chosenChar(8)" class="charCard"></div>
+                                    <div onclick="chosenChar(9)" class="charCard"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <span id="instruct__one" class="instruct__player active">Player One</span>
+                                </div>
+
+                                <div class="col-sm-6 right">
+                                    <span id="instruct__two" class="instruct__player">Player Two</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <h2 id="char__house" class="char__house"></h2>
+                            <h1 id="char__name" class="char__name"></h1>
+                            <p id="char__title" class="char__title"></p>
+                            <button onclick="charOne();" id="select__char" class="char__select">Select Character</button>
+                        </div>
+                    </div>
+
+                        <div class="row bottom__row">
+                            <div class="col-sm-12 center">
+                                <button style="background: grey; border: grey; color: white;" id="start__btn" disabled>Start Game</button></a>
+                            </div>
+                        </div>
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-1"></div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-1"></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-1"></div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-2">
-                        <div class="card">
-                            <div class="card-inner"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-1"></div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 center">
-                        <button class="startBtn" onclick="startGame();">START THE GAME</button>
-                    </div>
-                </div>
-            </div>
         </main>
 
         <footer>

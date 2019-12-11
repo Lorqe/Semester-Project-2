@@ -20,9 +20,73 @@
     
          <!-------- CUSTOM CSS -------->
          <link href="css/style.css" rel="stylesheet">
+
+         <!---------- Font Awesome ------->
+         <script src="https://kit.fontawesome.com/117c523adf.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
        
+        <div class="mainStart">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 center">
+                            <h1 class="main__title">Game of Thrones</h1>
+                            <h2 class="main__title--large">The Board Game</h2>
+                            <a href="character.html"><button class="main__btn">Play Game</button></a>
+                        </div>
+                    </div>
+
+                    <div class="row bottom__row">
+                        <div class="col-sm-6">
+                            <div class="player">
+                                    <i class="fas fa-volume-mute" id="volumeOff"></i>
+                                <i class="fas fa-volume-up" id="volumeOn"></i>
+                            </div>
+
+                            <audio id="audioFile" loop autoplay>
+                                <source src="audio/background.mp3" type="audio/mpeg">
+                                Your browser does not support the audio.
+                            </audio>
+                        </div>
+
+                        <div class="col-sm-6 right">
+                            <a data-toggle="modal" data-target="#gameRules"><span class="main__rules"><i class="fal fa-question-circle"></i> Game Rules</span></a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="gameRules" tabindex="-1" role="dialog" aria-labelledby="gameRules" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Game rules</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="rule__title">How To Play</h3>
+                        <ul class="rule__list">
+                            <li>Game Of Thrones - The Board Game is a 2 player game.</li>
+                            <li>Choose a character and start the game</li>
+                            <li>First player to get to the end of the board wins</li>
+                            <li>Watch out for traps!</li>
+                            <li>Roll again if you hit six on the dice</li>
+                            <li>Good luck!</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <script src="js/mainPage.js"></script>
+        </footer>
     </body>
 </html>

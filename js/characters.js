@@ -3,7 +3,8 @@ var playerTurn = 0;
 var card = document.getElementsByClassName("charCard");
 var instruct__one = document.getElementById("instruct__one");
 var instruct__two = document.getElementById("instruct__two");
-var selected;
+var selected = 0;
+var number = 0;
 
 function chosenChar(x) {
 
@@ -12,9 +13,7 @@ function chosenChar(x) {
     document.getElementById("char__house").innerHTML = card[x].dataset.house;
     document.getElementById("char__title").innerHTML = card[x].dataset.title;
     console.log(x);
-    
 
-    
     if(playerTurn === 0) {
 
         for (var i = 0; i < card.length; i++) {
@@ -38,26 +37,29 @@ function chosenChar(x) {
     }
 }
 
-
+// Player selection
 function charOne() {
-    if(playerTurn === 0) {
-        document.getElementById("select__char").addEventListener("click", event => {
+    
+    if (playerTurn === 0) {
+            console.log("Player One is choosing");
             window.sessionStorage.setItem("PlayerOne", card[selected].dataset.name);
             console.log("Player One has selected: " + card[selected].dataset.name);
             card[selected].removeAttribute("onclick");
+            card[selected].style.borderColor = "#340707";
+            card[selected].style.color = "#707070";
+            document.getElementById("instruct__one").style.color = "#340707";
+            document.getElementById("instruct__one").style.fontWeight = "700";
             instruct__one.classList.remove("active");
             instruct__two.classList.add("active");
-            playerTurn++;
-        });
-    } else {
-
-    }
-    
-    if (playerTurn === 1) {
-        document.getElementById("select__char").addEventListener("click", event => {
+            playerTurn = 1;
+    } else if (playerTurn === 1) {
             window.sessionStorage.setItem("PlayerTwo", card[selected].dataset.name);
             console.log("Player Two has selected: " + card[selected].dataset.name);
             card[selected].removeAttribute("onclick");
+            card[selected].style.borderColor = "#072234";
+            card[selected].style.color = "#707070";
+            document.getElementById("instruct__two").style.color = "#072234";
+            document.getElementById("instruct__two").style.fontWeight = "700";
             instruct__one.classList.remove("active");
             instruct__two.classList.add("active");
             instruct__two.classList.remove("active");
@@ -65,16 +67,14 @@ function charOne() {
 
             document.getElementById("start__btn").removeAttribute("disabled");
             document.getElementById("start__btn").removeAttribute("style");
-
-            document.getElementById("start__btn").addEventListener("click", event => {
-                window.location = "game.html";
-            });
-        });
-    } else {
-
+            document.getElementById("select__char").style.display = "none";
+            document.getElementById("start__btn").style.dispaly ="block";
     }
 }
 
+document.getElementById("start__btn").addEventListener("click", event => {
+    window.location = "game.html";
+});
 
 
 

@@ -20,6 +20,9 @@
     
          <!-------- CUSTOM CSS -------->
          <link href="css/style.css" rel="stylesheet">
+
+          <!---------- Font Awesome ------->
+          <script src="https://kit.fontawesome.com/117c523adf.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -71,10 +74,22 @@
                     </div>
 
                         <div class="row bottom__row">
-                            <div class="col-sm-12 center">
-                                <button style="background: grey; border: grey; color: white;" id="start__btn" disabled>Start Game</button></a>
+                                <div class="col-sm-6">
+                                    <div class="player">
+                                        <i class="fas fa-volume-mute" id="volumeOff"></i>
+                                        <i class="fas fa-volume-up" id="volumeOn"></i>
+                                    </div>
+        
+                                    <audio id="audioFile" loop autoplay>
+                                        <source src="audio/background.mp3" type="audio/mpeg">
+                                        Your browser does not support the audio.
+                                    </audio>
+                                </div>
+        
+                                <div class="col-sm-6 right">
+                                    <button style="display: none;" id="start__btn" disabled>Start Game</button></a>
+                                </div>
                             </div>
-                        </div>
                 </div>
             </div>
 
@@ -83,6 +98,7 @@
         <footer>
             <!--------- JS -------->
             <script src="js/characters.js"></script>
+            <script src="js/mainPage.js"></script>
         </footer>
     </body>
 </html>

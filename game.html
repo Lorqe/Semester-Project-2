@@ -34,10 +34,39 @@
     <body class="stop-scrolling">
         <header></header>
 
-        <main class="board">
-            <button id="rollOne">Roll Player 1</button>
-            <button id="rollTwo">Roll Player 2</button>
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3" style="padding: 0;">
+                            <div class="rollArea">
+                                    <img src="img/logo.png" id="boardLogoGame" />
+                                    <button id="rollOne">Roll Player 1</button>
+                                    <button id="rollTwo" style="display: none;">Roll Player 2</button>
+                    
+                                    <div class="dice" id="diceRoll">
+                                        
+                                    </div>
+                    
+                                    <p id="rollDesc">Player <span id="playerSpan"></span> rolled a <span id="previousRoll"></span>!</p>
+                                    <p id="rollIsSix" style="display: none;">You rolled a 6!<br /> Your turn again!</p>
+                    
+                                    <div class="score">
+                                        <hr class="scoreHR">
+                                        <p id="scoreDesc">First to 30 points win!</p>
+                                        <p id="scoreOne"><img src="img/player1.png" style="width: 10px;"> PLAYER ONE: <span id="totalScoreOne">0</span></p>
+                                        <p id="scoreTwo"><img src="img/player2.png" style="width: 10px;"> PLAYER TWO: <span id="totalScoreTwo">0</span></p>
+                                    </div>
+                                </div>
+                    </div>
 
+                    <div class="col-sm-9">
+                        <div id="tagBoard"></div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
         </main>
 
         <footer>

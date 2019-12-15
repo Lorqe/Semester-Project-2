@@ -10,9 +10,15 @@ function chosenChar(x) {
 
     selected = x;
     document.getElementById("char__name").innerHTML = card[x].dataset.name;
-    document.getElementById("char__house").innerHTML = card[x].dataset.house;
     document.getElementById("char__title").innerHTML = card[x].dataset.title;
+    document.getElementById("char__gender").innerHTML = card[x].dataset.gender;
+    document.getElementById("char__born").innerHTML = card[x].dataset.born;
     console.log(x);
+
+    document.getElementById("select__char").style.display = "block";
+    document.getElementById("char__title").style.display = "block";
+    document.getElementById("born").style.display = "block";
+    document.getElementById("gender").style.display = "block";
 
     if(playerTurn === 0) {
 
@@ -85,7 +91,7 @@ var playerOne = "";
 var playerTwo = "";
 
 // Open connection
-request.open('GET', 'https://www.anapioficeandfire.com/api/characters?page=1&pageSize=25', true);
+request.open('GET', 'https://www.anapioficeandfire.com/api/characters?page=1&pageSize=45', true);
 
 request.onload = function() {
     // Access JSON here
@@ -98,7 +104,7 @@ request.onload = function() {
         var s= 0;
 
         for(i = 0; i < q; i++) {
-            if(data[i].name === "") {
+            if(data[i].name === "" || data[i].gender === "" || data[i].born === "" || data[i].name === data[i+1].name) {
                 q++;
             } else {
                 // Data we need: name, gender, titles(loop), aliases(loop), check allegiances, can check mother/father,
@@ -108,8 +114,9 @@ request.onload = function() {
                 cards[s].appendChild(name);
     
                 cards[s].setAttribute("data-name", data[i].name);
-                cards[s].setAttribute("data-house", "HOUSE COMING HERE");
                 cards[s].setAttribute("data-title", data[i].aliases[0]);
+                cards[s].setAttribute("data-gender", data[i].gender);
+                cards[s].setAttribute("data-born", data[i].born);
                 s++;
                 
             }

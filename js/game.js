@@ -1,67 +1,5 @@
-/***
-function init() {
-    let pOne = sessionStorage.getItem("PlayerOne");
-    let pTwo = sessionStorage.getItem("PlayerTwo");
-
-    var pOneHolder = document.getElementById("playerOneChar");
-    var pTwoHolder = document.getElementById("playerTwoChar");
-
-    pOneHolder.innerHTML = pOne;
-    pTwoHolder.innerHTML = pTwo;
-}
-
-init();
-
-
-var playerOne;
-var playerTwo;
-var r = 0;
-var totalOne = 0;
-var totalTwo = 0;
-
-function rollDice() {
-    if(r === 0) {
-        var roll = Math.floor(Math.random() * 6) + 1;
-        totalOne = totalOne + roll;
-        if(roll === 6) {
-            r = 0;
-        } else {
-            r = 1;
-        }
-
-        if(totalOne >= 30) {
-            totalOne = 30;
-            alert("PLAYER 1 WINS!");
-        }
-
-        console.log("Player One Rolls: " + roll);
-
-    } else if(r === 1) {
-        var roll = Math.floor(Math.random() * 6) + 1;
-        totalTwo = totalTwo + roll;
-        if(roll === 6) {
-            r = 1;
-        } else {
-            r = 0;
-        }
-
-        if(totalTwo >= 30) {
-            totalTwo = 30;
-            alert("PLAYER 2 WINS!");
-        }
-
-        console.log("Player Two Rolls: " + roll);
-    }
-    
-}
-
-**/
-
-
 const frame = new Frame({
-	scaling:"fit",
-	width:1200,
-	height:768,
+	scaling:"tagBoard",
 	color:"transparent",
 	outerColor:darker
 });
@@ -74,10 +12,6 @@ frame.on("ready", ()=>{
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // BOARD
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    // the Board() class - not to be confused with the LeaderBoard() class ;-)
-    // this defaults to isometric but can be used with top view
-    // or toggled later with board.isometric = false;
 
     const board = new Board({
         info:'{"obj":[[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#ACACAC","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"-","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"r","color":"#000","icon":null,"items":[]},{"data":"g","color":"#ACACAC","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"g","color":"#073428","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"-","color":"#50c4b7","icon":null,"items":[{"zimon":"Tree","args":[]}]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}],[{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]},{"data":"x","color":"#000","icon":null,"items":[]}]],"zimon":1,"info":"https://zimjs.com/zimon/"}',// from info file made using board.record();
@@ -92,37 +26,52 @@ frame.on("ready", ()=>{
     // BOARD ITEMS
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    // add a player and key controls
-    // provide the keys with the allowed data squares
-    const player = new Person("340707","340707","340707");
+    // add a player
+    const player = new Person("#340707","#340707","#340707");
     const player2 = new Person("#072234","#072234","#072234");
     var x = 4;
     var y = 7;
     
-    board.add(player2, x, y);
-    board.add(player, x, y); // can only add() to the board (otherwise use board.info)
-  
-
     
+    board.add(player, x, y); // can only add() to the board (otherwise use board.info)
+    board.add(player2, x, y);
+
+    // Rolling
     var player1Roll = document.getElementById("rollOne");
     var player2Roll = document.getElementById("rollTwo");
 
-    
+    // Player 1 Controls
     var totalPlayerOne = 0;
     
     function movePlayerOne() {
 
-        var roll = Math.floor( Math.random() * 6 ) +1;
 
+        var roll = Math.floor( Math.random() * 6 ) +1;
+        document.getElementById("diceRoll").style.background = "url('img/dice" +  roll + ".png')" ;
+        document.getElementById("diceRoll").style.backgroundSize = "contain";
+        
+
+        
         if(roll !== 6) {
             player1Roll.style.display = "none";
             player2Roll.style.display = "block";
+            document.getElementById("previousRoll").innerHTML = roll;
+            document.getElementById("playerSpan").innerHTML = "ONE";
+            document.getElementById("rollDesc").style.display = "block";
+            document.getElementById("rollIsSix").style.display = "none";
+        } else {
+            document.getElementById("previousRoll").innerHTML = roll;
+            document.getElementById("playerSpan").innerHTML = "ONE";
+            document.getElementById("rollDesc").style.display = "block";
+            document.getElementById("rollIsSix").style.display = "block";
         }
 
         totalPlayerOne = totalPlayerOne + roll;
+        
         console.log(totalPlayerOne);
         console.log("Roll: " + roll)
 
+        // TRAPS
         if(totalPlayerOne === 15) {
             board.add(player, 2, 4);
             
@@ -131,7 +80,41 @@ frame.on("ready", ()=>{
                 totalPlayerOne = 12;
                 board.add(player, 4, 3);
             }, 200);
+        } else if(totalPlayerOne === 7) {
+            board.add(player, 7, 3);
+            
+            setTimeout(function(){
+                alert("Player 1: You found a dragon egg! You are too scared to touch it, move back one space.");
+                totalPlayerOne = 6;
+                board.add(player, 7, 4);
+            }, 200);
+        } else if(totalPlayerOne === 22) {
+            board.add(player, 0, 3);
+            
+            setTimeout(function(){
+                alert("Player 1: You've stepped in a bear trap! Move back two spaces.");
+                totalPlayerOne = 20;
+                board.add(player, 0, 5);
+            }, 200);
+        } else if (totalPlayerOne === 29) {
+            board.add(player, 4, 0);
+            
+            setTimeout(function(){
+                alert("Player 1: Arya jumped in front of you and scared you! Move back four spaces.");
+                totalPlayerOne = 25;
+                board.add(player, 0, 0);
+            }, 200);
+        } else if(totalPlayerOne === 3) {
+            board.add(player, 7, 7);
+            
+            setTimeout(function(){
+                alert("Player 1: Bran's wheelchair is blocking the road. Go back to start.");
+                totalPlayerOne = 0;
+                board.add(player, 4, 7);
+            }, 200);
         }
+
+        document.getElementById("totalScoreOne").innerHTML = totalPlayerOne;
 
         if(totalPlayerOne < 4) {
             board.add(player, (x + totalPlayerOne), y);
@@ -149,23 +132,39 @@ frame.on("ready", ()=>{
             board.add(player, (2 - (totalPlayerOne - 17)), 6);
         } else if (totalPlayerOne < 26) {
             board.add(player, 0, (6 - (totalPlayerOne - 19)));
-        } else if (totalPlayerOne < 31) {
+        } else if (totalPlayerOne < 30) {
             board.add(player, ((totalPlayerOne - 25)), 0);
-        } else if (totalPlayerOne > 28) {
+        } else if (totalPlayerOne > 29) {
+            sessionStorage.setItem("winnerName", sessionStorage.getItem("PlayerOne"));
+            sessionStorage.setItem("winnerPlayer", "Player One");
             window.location.href = "congrats.html";
         }
         
     }
 
+
+    // Player Two Controls
     var totalPlayerTwo = 0;
     
 
     function movePlayerTwo() {
         var roll = Math.floor( Math.random() * 6 ) +1;
+        document.getElementById("diceRoll").style.background = "url('img/dice" +  roll + ".png')" ;
+        document.getElementById("diceRoll").style.backgroundSize = "contain";
+        
 
         if(roll !== 6) {
             player2Roll.style.display = "none";
             player1Roll.style.display = "block";
+            document.getElementById("previousRoll").innerHTML = roll;
+            document.getElementById("playerSpan").innerHTML = "TWO";
+            document.getElementById("rollDesc").style.display = "block";
+            document.getElementById("rollIsSix").style.display = "none";
+        } else {
+            document.getElementById("previousRoll").innerHTML = roll;
+            document.getElementById("playerSpan").innerHTML = "TWO";
+            document.getElementById("rollDesc").style.display = "block";
+            document.getElementById("rollIsSix").style.display = "block";
         }
 
         totalPlayerTwo = totalPlayerTwo + roll;
@@ -180,7 +179,42 @@ frame.on("ready", ()=>{
                 totalPlayerTwo = 12;
                 board.add(player2, 4, 3);
             }, 200);
+        } else if(totalPlayerTwo === 7) {
+            board.add(player2, 7, 3);
+            
+            setTimeout(function(){
+                alert("Player 2: You found a dragon egg! You are too scared to touch it, move back one space.");
+                totalPlayerTwo = 6;
+                board.add(player2, 7, 4);
+            }, 200);
+        } else if(totalPlayerTwo === 22) {
+            board.add(player2, 0, 3);
+            
+            setTimeout(function(){
+                alert("Player 2: You've stepped in a bear trap! Move back two spaces.");
+                totalPlayerTwo = 20;
+                board.add(player2, 0, 5);
+            }, 200);
+        } else if (totalPlayerTwo === 29) {
+            board.add(player2, 4, 0);
+            
+            setTimeout(function(){
+                alert("Player 2: Arya jumped in front of you and scared you! Move back four spaces.");
+                totalPlayerTwo = 25;
+                board.add(player2, 0, 0);
+            }, 200);
+        } else if(totalPlayerTwo === 3) {
+            board.add(player2, 7, 7);
+            
+            setTimeout(function(){
+                alert("Player 2: Bran's wheelchair is blocking the road. Go back to start.");
+                totalPlayerTwo = 0;
+                board.add(player2, 4, 7);
+            }, 200);
         }
+
+        
+        document.getElementById("totalScoreTwo").innerHTML = totalPlayerTwo;
 
         if(totalPlayerTwo < 4) {
             board.add(player2, (x + totalPlayerTwo), y);
@@ -198,15 +232,17 @@ frame.on("ready", ()=>{
             board.add(player2, (2 - (totalPlayerTwo - 17)), 6);
         } else if (totalPlayerTwo < 26) {
             board.add(player2, 0, (6 - (totalPlayerTwo - 19)));
-        } else if (totalPlayerTwo < 31) {
+        } else if (totalPlayerTwo < 30) {
             board.add(player2, ((totalPlayerTwo - 25)), 0);
         } else if (totalPlayerTwo > 29) {
+            sessionStorage.setItem("winnerName", sessionStorage.getItem("PlayerTwo"));
+            sessionStorage.setItem("winnerPlayer", "Player Two");
             window.location.href = "congrats.html";
         }
         
     }
     
-    
+    // Call roll functionality
     player1Roll.addEventListener("click", movePlayerOne);
     player2Roll.addEventListener("click", movePlayerTwo);
 
@@ -223,17 +259,6 @@ frame.on("ready", ()=>{
 
     
     board.update();
-
-
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // TIMER AND SCORER
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    // NAVIGATION AT BOTTOM
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
     
 	
 	// DOCS FOR ITEMS USED

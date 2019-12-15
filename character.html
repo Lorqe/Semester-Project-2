@@ -34,6 +34,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
+                            <img src="img/logo.png" id="boardLogoChar" />
                             <h4 class="instruct__char">Choose Character</h4>
                         </div>
                     </div>
@@ -56,38 +57,27 @@
 
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <span id="instruct__one" class="instruct__player active">Player One</span>
+                                    <span id="instruct__one" class="instruct__player active"><img src="img/player1.png" style="width: 10px;"> Player One</span>
                                 </div>
 
                                 <div class="col-sm-6 right">
-                                    <span id="instruct__two" class="instruct__player">Player Two</span>
+                                    <span id="instruct__two" class="instruct__player"><img src="img/player2.png" style="width: 10px;"> Player Two</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
-                            <h2 id="char__house" class="char__house"></h2>
                             <h1 id="char__name" class="char__name"></h1>
                             <p id="char__title" class="char__title"></p>
+                            <p id="gender" class="char__title">Gender: <span id="char__gender"></span></p>
+                            <p id="born" class="char__title">Born: <span id="char__born"></span></p>
                             <button onclick="charOne();" id="select__char" class="char__select">Select Character</button>
                         </div>
                     </div>
 
-                        <div class="row bottom__row">
-                                <div class="col-sm-6">
-                                    <div class="player">
-                                        <i class="fas fa-volume-mute" id="volumeOff"></i>
-                                        <i class="fas fa-volume-up" id="volumeOn"></i>
-                                    </div>
-        
-                                    <audio id="audioFile" loop autoplay>
-                                        <source src="audio/background.mp3" type="audio/mpeg">
-                                        Your browser does not support the audio.
-                                    </audio>
-                                </div>
-        
-                                <div class="col-sm-6 right">
-                                    <button style="display: none;" id="start__btn" disabled>Start Game</button></a>
+                        <div class="row">        
+                                <div class="col-sm-12 right">
+                                    <button style="display: none;" id="start__btn" disabled>Start Game <img src="img/play.png" style="width: 32px;"></button></a>
                                 </div>
                             </div>
                 </div>
@@ -98,7 +88,6 @@
         <footer>
             <!--------- JS -------->
             <script src="js/characters.js"></script>
-            <script src="js/mainPage.js"></script>
         </footer>
     </body>
 </html>
